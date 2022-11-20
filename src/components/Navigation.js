@@ -7,6 +7,7 @@ const Navigation = () => {
       <ul>
         <NavLink
           to="/"
+          end
           className={(nav) => (nav.isActive ? "nav-active hover" : "hover")}
         >
           <li>accueil</li>
