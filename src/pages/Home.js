@@ -29,7 +29,7 @@ const Home = () => {
       <Mouse />
       <motion.div
         className="home"
-        initial="intial"
+        initial="initial"
         animate="visible"
         exit="exit"
         variants={variants}
@@ -48,7 +48,7 @@ const Home = () => {
                 bottom: 250,
               }}
             >
-              Agence Sabri
+              SABRI
             </motion.h1>
             <motion.h2
               drag
@@ -64,7 +64,7 @@ const Home = () => {
             </motion.h2>
           </div>
         </div>
-        <Buttons right="/projet-1" />
+        <Buttons right={"/projet-1"} />
       </motion.div>
     </div>
   );

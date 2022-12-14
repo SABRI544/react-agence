@@ -13,6 +13,7 @@ const Project = ({ projectNumber }) => {
     setTop(Math.floor(Math.random() * 200 + 150) + "px");
     setSize("scale(" + (Math.random() + 0.7) + ")");
   }, []);
+
   const variants = {
     initial: {
       opacity: 0,
@@ -44,7 +45,7 @@ const Project = ({ projectNumber }) => {
     visible: {
       opacity: 1,
       x: 0,
-      y: 1,
+      y: 0,
     },
   };
 
@@ -61,28 +62,35 @@ const Project = ({ projectNumber }) => {
         <h1>{currentProject.title}</h1>
         <p>{currentProject.date}</p>
         <ul className="languages">
-          {currentProject.languages.map((item) => {
-            return <li key={item}>{item}</li>;
-          })}
+          {currentProject.languages.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </div>
       <motion.div
-        className="img-content"
         initial="initial"
         animate="visible"
         variants={imgAnim}
-        transition={{ duraion: 1.2 }}
+        transition={{ duration: 1.2 }}
+        className="img-content"
       >
         <div className="img-container hover">
           <span>
             <h3>{currentProject.title}</h3>
             <p>{currentProject.infos}</p>
           </span>
-          <img
-            src={currentProject.img}
-            alt={currentProject.title}
-            className="img"
-          />
+          <a
+            href={currentProject.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover"
+          >
+            <img
+              src={currentProject.img}
+              alt={currentProject.title}
+              className="img"
+            />
+          </a>
         </div>
         <div className="button-container">
           <a

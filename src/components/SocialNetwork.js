@@ -3,9 +3,10 @@ import React from "react";
 const SocialNetwork = () => {
   const anim = () => {
     const icons = document.querySelectorAll(".social-network a");
+
     icons.forEach((link) => {
       link.addEventListener("mouseover", (e) => {
-        link.style.transform = `translate(${e.offsetX - 20}px,${
+        link.style.transform = `translate(${e.offsetX - 20}px, ${
           e.offsetY - 13
         }px)`;
       });
@@ -20,36 +21,36 @@ const SocialNetwork = () => {
     <div className="social-network">
       <ul className="content">
         <a
-          href="https://www.facebook.com"
+          href="https://www.linkedin.com/in/sabri-alabouch/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover"
           onMouseOver={anim}
         >
           <li>
-            <i className="fab fa-facebook-f"></i>
+            <i className="fab fa-linkedin"></i>
           </li>
         </a>
         <a
-          href="https://www.twitter.com"
+          href="https://github.com/SABRI544"
           target="_blank"
           rel="noopener noreferrer"
           className="hover"
           onMouseOver={anim}
         >
           <li>
-            <i className="fab fa-twitter"></i>
+            <i className="fab fa-github"></i>
           </li>
         </a>
         <a
-          href="https://www.instagram.com"
+          href="mailto:sabri.alabouch@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="hover"
           onMouseOver={anim}
         >
           <li>
-            <i className="fab fa-instagram"></i>
+            <i class="fa-solid fa-envelope"></i>
           </li>
         </a>
       </ul>

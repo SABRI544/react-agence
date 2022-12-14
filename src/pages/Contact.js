@@ -1,17 +1,36 @@
 import React from "react";
+import ContactForm from "../components/ContactForm";
+import Logo from "../components/Logo";
 import Mouse from "../components/Mouse";
 import Navigation from "../components/Navigation";
-import Logo from "../components/Logo";
-import ContactForm from "../components/ContactForm";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import SocialNetwork from "../components/SocialNetwork";
 import Buttons from "../components/Buttons";
+import { motion } from "framer-motion";
 
 const Contact = () => {
+  const pageTransition = {
+    in: {
+      opacity: 1,
+      x: 0,
+    },
+    out: {
+      opacity: 0,
+      x: 200,
+    },
+  };
+
   return (
     <main>
       <Mouse />
-      <div className="contact">
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageTransition}
+        transition={{ duration: 0.4 }}
+        className="contact"
+      >
         <Navigation />
         <Logo />
         <ContactForm />
@@ -19,24 +38,23 @@ const Contact = () => {
           <div className="address">
             <div className="content">
               <h4>adresse</h4>
-              <p>12 rue lamartine </p>
-              <p>94300 Vincennes </p>
+              <p>94240 L'Hay Les Roses</p>
             </div>
           </div>
-          <div className="phone">
+          {/*  <div className="phone">
             <div className="content">
               <h4>téléphone</h4>
-              <CopyToClipboard text="0782762428" className="hover">
+              <CopyToClipboard text="06000000" className="hover">
                 <p
                   style={{ cursor: "pointer" }}
                   className="clipboard"
                   onClick={() => alert("Téléphone copié !")}
                 >
-                  07 82 76 24 28
+                  06 00 00 00 00
                 </p>
               </CopyToClipboard>
             </div>
-          </div>
+          </div>*/}
           <div className="email">
             <div className="content">
               <h4>email</h4>
@@ -49,18 +67,18 @@ const Contact = () => {
                   className="clipboard"
                   onClick={() => alert("Email copié !")}
                 >
-                  @gmail.com
+                  sabri.alabouch@gmail.com
                 </p>
               </CopyToClipboard>
             </div>
           </div>
           <SocialNetwork />
           <div className="credits">
-            <p>Sabri - 2022</p>
+            <p>SA- 2022</p>
           </div>
         </div>
         <Buttons left={"/projet-4"} />
-      </div>
+      </motion.div>
     </main>
   );
 };
